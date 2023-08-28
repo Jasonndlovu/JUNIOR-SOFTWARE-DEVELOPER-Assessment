@@ -19,5 +19,4 @@ public class DateRangeRequest {
         return endDate;
     }
 
-    // Getters and setters
 }
