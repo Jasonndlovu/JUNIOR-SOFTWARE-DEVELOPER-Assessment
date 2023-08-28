@@ -97,6 +97,7 @@ public class InvestorController {
     @PostMapping("/withdraw/{investorId}")
     public ResponseEntity<Investor> withdraw(@PathVariable Long investorId, @RequestBody Withdrawal withdrawal) {
         try {
+            //Delete this print!
             System.out.println(withdrawal);
 
             // Retrieve the Investor by ID
@@ -109,8 +110,11 @@ public class InvestorController {
 
                 // Calculate 90% of the current balance
                 BigDecimal maxWithdrawalAmount = currentBalance.multiply(new BigDecimal("0.9"));
+                //Delete this print!
                 System.out.println(withdrawalAmount);
+                //Delete this print!
                 System.out.println(currentBalance);
+                //Delete this print!
                 System.out.println(maxWithdrawalAmount);
 
                 int holder = withdrawalAmount.compareTo(maxWithdrawalAmount);
@@ -128,16 +132,18 @@ public class InvestorController {
                     investor.setBalance(newBalance);
                     Investor updatedInvestor = investorRepository.save(investor);
 
-                    // Create a new Withdrawal instance and set its properties
+                    // New Withdrawal instance and set its properties
                     Withdrawal newWithdrawal = new Withdrawal();
                     newWithdrawal.setInvestor(investor);
                     newWithdrawal.setWithdrawalAmount(withdrawalAmount);
 
+                    //Delete this print!
                     System.out.println("Here!");
-                    // Save the Withdrawal
+                    // Save the Withdrawal data
                     Withdrawal updatedWithdrawal = withdrawalRepository.save(newWithdrawal);
+                    //Delete this print!
                     System.out.println("Here!");
-                    // You can perform additional actions with the updatedWithdrawal if needed.
+                  
 
                     return new ResponseEntity<>(updatedInvestor, HttpStatus.OK);
                 } else {
