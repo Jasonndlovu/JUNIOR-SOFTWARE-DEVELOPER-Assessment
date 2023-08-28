@@ -51,7 +51,7 @@ public class WithdrawalController {
                 .withQuotechar(CSVWriter.NO_QUOTE_CHARACTER).withSeparator(CSVWriter.DEFAULT_SEPARATOR).withOrderedResults(false)
                 .build();
 
-        // Write filtered withdrawal data to the CSV file
+        // Write to CSV file
         System.out.println(withdrawals);
 
         writer.write(withdrawals);
@@ -85,7 +85,7 @@ public class WithdrawalController {
         StatefulBeanToCsv<Withdrawal> writer = new StatefulBeanToCsvBuilder<Withdrawal>(response.getWriter())
                 .withQuotechar(CSVWriter.NO_QUOTE_CHARACTER).withSeparator(CSVWriter.DEFAULT_SEPARATOR).withOrderedResults(false)
                 .build();
-        //write all employees data to csv file
+        //write to csv file
         writer.write(withdrawalService.findAll());
 
     }
