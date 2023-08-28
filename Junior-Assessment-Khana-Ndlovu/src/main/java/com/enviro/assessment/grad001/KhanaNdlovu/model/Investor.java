@@ -38,22 +38,22 @@ public class Investor {
     @Column
     private String product;
     @Column
-    private BigDecimal balance; // Add the balance attribute
+    private BigDecimal balance; 
 
     public BigDecimal getBalance() {
-        return balance; // Return the current balance
+        return balance; 
     }
 
     public void setBalance(BigDecimal newBalance) {
-        this.balance = newBalance; // Set the new balance
+        this.balance = newBalance; 
     }
 
     public int getAge() {
-        return age;  // Return the user's age
+        return age;  
     }
 
     public String getProdut() {
-        return product; // Return the user's chosen Product
+        return product; 
     }
 
     public long getId() {
